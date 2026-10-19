@@ -15,14 +15,12 @@ def get_db_connection():
 
 @app.route('/api/tours', methods=['GET'])
 def get_tours():
-    # Получаем поисковый запрос из URL (например, /api/tours?search=Алтай)
     search_query = request.args.get('search', '').strip()
 
     try:
         conn = get_db_connection()
 
         if search_query:
-            # SQL-поиск по названию туров и описанию (без учета регистра)
             sql = "SELECT * FROM tours WHERE title LIKE ? OR description LIKE ?"
             param = f"%{search_query}%"
             tours_raw = conn.execute(sql, (param, param)).fetchall()
