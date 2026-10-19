@@ -1,0 +1,71 @@
+services:
+  # КОНТЕЙНЕР 1: Проверка целостности БД
+  db-init:
+    build:
+      context: ./db-init
+      dockerfile: Dockerfile
+    image: tourism-db-init:latest
+    restart: "no"
+    volumes:
+      - ./db-init/db:/dbdata
+
+  # КОНТЕЙНЕР 2: Веб-интерфейс (Frontend)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: tourism-frontend:latest
+    restart: on-failure
+    networks:
+      - tourism-network
+
+  # КОНТЕЙНЕР 3: Микросервис каталога туров
+  backend-tours:
+    build:
+      context: ./backend-tours
+      dockerfile: Dockerfile
+    image: tourism-backend-tours:latest
+    restart: on-failure
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
+
+    volumes:
+      - ./db-init/db:/app/db
+    networks:
+      - tourism-network
+
+  # КОНТЕЙНЕР 4: Микросервис бронирования
+  backend-booking:
+    build:
+      context: ./backend-booking
+      dockerfile: Dockerfile
+    image: tourism-backend-booking:latest
+    restart: on-failure
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
+    volumes:
+      - ./db-init/db:/app/db
+    networks:
+      - tourism-network
+
+  # КОНТЕЙНЕР 5: Главный Reverse Proxy
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    image: tourism-proxy:latest
+    restart: on-failure
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend-tours
+      - backend-booking
+    networks:
+      - tourism-network
+
+networks:
+  tourism-network:
+    driver: bridge

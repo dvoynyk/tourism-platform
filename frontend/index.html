@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СИЛА ПУТЕШЕСТВИЙ — Главная</title>
+    <!-- Подключение внешних стилей -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">СИЛА ПУТЕШЕСТВИЙ</a>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="tours.html" class="nav__link">Туры</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="index.html#contacts" class="nav__link">Контакты</a></li>
+                    <li class="nav__item"><a href="booking.html" class="nav__link">Бронирование</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ КОНТЕНТ -->
+    <main class="main">
+
+        <!-- ГЕРОЙ-СЕКЦИЯ (БАННЕР С ПОИСКОМ) -->
+        <section class="hero">
+            <div class="container hero__inner">
+                <h1 class="hero__title">Откройте мир вместе с нами</h1>
+                <p class="hero__subtitle">Бронируйте туры мечты по лучшим ценам. Море, горы, города — всё в одном месте.</p>
+                
+                 <!-- Форма поиска туров -->
+                <form class="search-form" id="search-form">
+                    <input type="text" id="search-input" class="search-form__input" placeholder="Куда хотите поехать? (например: Алтай, Рим)" aria-label="Направление">
+                    <input type="date" class="search-form__input" aria-label="Дата вылета">
+                    <select class="search-form__select" aria-label="Количество гостей">
+                        <option value="1">1 гость</option>
+                        <option value="2" selected>2 гостя</option>
+                        <option value="3">3 гостя</option>
+                        <option value="4">4 гостя</option>
+                    </select>
+                    <button type="submit" class="btn btn--search">Найти тур</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ ПОПУЛЯРНЫХ ТУРОВ -->
+        <section class="tours-section">
+            <div class="container">
+                <h2 class="section-title">Популярные направления</h2>
+                
+                <!-- Сюда JavaScript сам вставит карточки из Базы Данных -->
+                <div class="tour-grid" id="tours-container">
+                    <p>Загрузка туров из базы данных...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ ПРЕИМУЩЕСТВ -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-card__icon">🛡️</span>
+                        <h4 class="feature-card__title">Надёжность</h4>
+                        <p class="feature-card__desc">Работаем с проверенными туроператорами и отелями.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">💰</span>
+                        <h4 class="feature-card__title">Лучшие цены</h4>
+                        <p class="feature-card__desc">Гарантируем выгодные предложения и скидки.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">📞</span>
+                        <h4 class="feature-card__title">Поддержка 24/7</h4>
+                        <p class="feature-card__desc">Поможем на всех этапах — от выбора до возвращения.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">🌍</span>
+                        <h4 class="feature-card__title">Более 50 стран</h4>
+                        <p class="feature-card__desc">Огромный выбор направлений на любой вкус.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- СЕКЦИЯ "О НАС" -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about__inner">
+                    <div class="about__content">
+                        <h2 class="section-title section-title--left">О компании «СИЛА ПУТЕШЕСТВИЙ»</h2>
+                        <p class="about__text">
+                            Мы — современное туроператорское агентство, основанное в 2020 году. Наша цель — сделать ваш отдых максимально комфортным, безопасным и запоминающимся.
+                        </p>
+                        <p class="about__text">
+                            Мы сотрудничаем более чем с 500 проверенными отелями по всему миру и предлагаем эксклюзивные условия онлайн-бронирования без скрытых комиссий и переплат.
+                        </p>
+                        <div class="about__stats">
+                            <div class="stat-item">
+                                <span class="stat-item__num">10 000+</span>
+                                <span class="stat-item__label">Довольных туристов</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-item__num">50+</span>
+                                <span class="stat-item__label">Стран мира</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-item__num">5 лет</span>
+                                <span class="stat-item__label">На рынке</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ "КОНТАКТЫ" -->
+        <section class="contacts-section" id="contacts">
+            <div class="container">
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <p class="section-subtitle">Остались вопросы? Наши менеджеры на связи 24/7</p>
+
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <span class="contact-card__icon">📍</span>
+                        <h4 class="contact-card__title">Адрес офиса</h4>
+                        <p class="contact-card__desc">г. Москва, проспект Вернадского, д. 78</p>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-card__icon">📞</span>
+                        <h4 class="contact-card__title">Телефон</h4>
+                        <p class="contact-card__desc">+7 (800) 555-35-35</p>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-card__icon">✉️</span>
+                        <h4 class="contact-card__title">Электронная почта</h4>
+                        <p class="contact-card__desc">info@silatravel.ru</p>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-card__icon">⏰</span>
+                        <h4 class="contact-card__title">Режим работы</h4>
+                        <p class="contact-card__desc">Пн-Вс: с 09:00 до 21:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ САЙТА -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__logo">СИЛА ПУТЕШЕСТВИЙ</div>
+            
+            <nav class="footer__nav">
+                <a href="#" class="footer__link">О компании</a>
+                <a href="#" class="footer__link">Помощь</a>
+                <a href="#" class="footer__link">Контакты</a>
+                <a href="#" class="footer__link">Политика конфиденциальности</a>
+            </nav>
+            
+            <div class="footer__copyright">
+                &copy; 2025 СИЛА ПУТЕШЕСТВИЙ. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключение внешнего скрипта -->
+    <script src="js/main.js"></script>
+</body>
+</html>

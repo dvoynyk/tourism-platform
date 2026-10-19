@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СИЛА ПУТЕШЕСТВИЙ — Каталог туров</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">СИЛА ПУТЕШЕСТВИЙ</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="tours.html" class="nav__link">Туры</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="index.html#contacts" class="nav__link">Контакты</a></li>
+                    <li class="nav__item"><a href="booking.html" class="nav__link">Бронирование</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Все доступные туры</h1>
+                <p class="page-subtitle">Выберите направление для вашего идеального отдыха</p>
+            </div>
+        </section>
+
+        <!-- КАТАЛОГ ТУРОВ -->
+        <section class="tours-section">
+            <div class="container">
+                <!-- Сюда JS загрузит ВСЕ туры из базы данных SQLite -->
+                <div class="tour-grid" id="all-tours-container">
+                    <p>Загрузка каталога туров...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__logo">СИЛА ПУТЕШЕСТВИЙ</div>
+            <div class="footer__copyright">&copy; 2025 СИЛА ПУТЕШЕСТВИЙ. Все права защищены.</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

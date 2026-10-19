@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СИЛА ПУТЕШЕСТВИЙ — Бронирование</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">СИЛА ПУТЕШЕСТВИЙ</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="tours.html" class="nav__link">Туры</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="index.html#contacts" class="nav__link">Контакты</a></li>
+                    <li class="nav__item"><a href="booking.html" class="nav__link">Бронирование</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="booking-section">
+            <div class="container container--small">
+                <h1 class="section-title">Оформление бронирования</h1>
+                <p class="section-subtitle">Заполните форму, и наш менеджер свяжется с вами для подтверждения</p>
+
+                <!-- Блок вывода сообщений об успехе/ошибке -->
+                <div id="booking-alert" class="alert hidden"></div>
+
+                <!-- ФОРМА БРОНИРОВАНИЯ -->
+                <form class="booking-form" id="booking-form">
+                    <div class="form-group">
+                        <label for="tour-select">Выберите тур *</label>
+                        <select id="tour-select" class="form-input" required>
+                            <option value="">Загрузка туров...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-name">Ваше имя и фамилия *</label>
+                        <input type="text" id="user-name" class="form-input" placeholder="Иван Иванов" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="user-phone">Телефон *</label>
+                            <input type="tel" id="user-phone" class="form-input" placeholder="+7 (999) 000-00-00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email">Email</label>
+                            <input type="email" id="user-email" class="form-input" placeholder="example@mail.ru">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="travel-date">Желаемая дата вылета *</label>
+                            <input type="date" id="travel-date" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests-count">Количество гостей *</label>
+                            <input type="number" id="guests-count" class="form-input" min="1" max="10" value="2" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn--submit">Подтвердить бронирование</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__logo">СИЛА ПУТЕШЕСТВИЙ</div>
+            <div class="footer__copyright">&copy; 2025 СИЛА ПУТЕШЕСТВИЙ. Все права защищены.</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
